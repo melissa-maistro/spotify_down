@@ -2,9 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import os
 
-playlist = input("Playlist da scaricare: ")
-n = input("Numero canzone da cui partire: ")
-folder = input("Dove te la salvo? ")
+playlist = input("playlist link: ")
+n = input("number of the song to start with:  ")
+folder = input("download folder: ")
 print("OK!")
 
 # Using Chrome to access web
@@ -50,7 +50,7 @@ try:
         scarica_mp3_button = driver.find_element(By.CSS_SELECTOR, r"div.my-5.grid.sm\:grid-cols-2.gap-4.sm\:gap-2").get_property("children")[0]
         scarica_mp3_button.click()
 
-        # Go back to avoid google vignette (maledette)
+        # Go back to avoid google_vignette
         driver.get("https://spotifydown.com/it")
 
         # Insert playlist link
@@ -61,7 +61,7 @@ try:
         submit_button.click()
 
 except Exception as e:
-    print("\n\n\nMaledetti pop-up, prova a rilanciare lo script\n\n\n", e)
+    print("\n\n\nPop-ups... try to re-run the script\n\n\n", e)
 
 driver.close()
 
@@ -75,8 +75,8 @@ if os.path.exists(folder):
             os.rename(oldName, newName)
 
     if len(os.listdir(folder)) == 0:
-        print(f"Nessuna canzone scaricata in {folder}")
+        print(f"No songs downloaded in {folder}")
     else:
-        print(f"Canzoni scaricate in {folder} :")
+        print(f"Songs downloaded in {folder} :")
         for file in os.listdir(folder):
             print(file)
