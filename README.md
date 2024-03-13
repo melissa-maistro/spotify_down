@@ -30,8 +30,7 @@ pip install selenium
 python3 spotifydown.py
 ```
 
-6. It is going to ask you the playlist's link (Share -> Copy link), from which song you would like to start the download (number) and where to download the playlist's songs
-   (pass the full path, for example /Users/melissamaistro/Desktop/music/house).
+6. It is going to ask you the playlist's link (you can find it on Spotify by clicking "Share" -> "Copy link"), number of the song to start with and where to download the playlist's songs (pass the full path, for example /Users/melissamaistro/Desktop/music/house).
 
 7. Enjoy your music!
 
